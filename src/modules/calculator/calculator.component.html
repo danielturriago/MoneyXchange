@@ -1,0 +1,28 @@
+<div class="calculator-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">$</span>
+                <input [(ngModel)]="calcInput" (focusout)="focusOut()" class="form-control" type="text" step="0.01" placeholder="USD">
+            </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">€</span>
+                  <input [(ngModel)]="calcResult" class="form-control" type="text" step="0.01" placeholder="EUR" disabled>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="row button-container">
+      <div class="col-sm-12 text-center">
+          <button class="calculate-button" (click)="calculateChangeRate(calcInput)">Calculate</button>
+          <p *ngIf="errorMessage">Debes ingresar un valor</p>
+      </div>
+    </div>
+  </div>
+</div>
